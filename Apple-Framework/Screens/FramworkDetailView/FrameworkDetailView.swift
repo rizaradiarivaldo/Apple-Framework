@@ -21,15 +21,18 @@ struct FrameworkDetailView: View {
             
             Spacer()
             
-            Button{
-                isShowingSafariView = true
-            } label: {
-               AFButton(title: "Learn More")
+            Link(destination: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!) {
+                AFButton(title: "Learn More")
             }
+//            Button{
+//                isShowingSafariView = true
+//            } label: {
+//               AFButton(title: "Learn More")
+//            }
         }
-        .sheet(isPresented: $isShowingSafariView){
-            SafariView(url: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!)
-        }
+//        .sheet(isPresented: $isShowingSafariView){
+//            SafariView(url: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!)
+//        }
     }
 }
 
